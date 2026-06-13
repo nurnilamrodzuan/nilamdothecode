@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nilamrwork</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="cursor-text">VIEW</div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="#hero" class="nav-logo">nilamrwork</a>
+    <div class="nav-right">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About Me</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon sun">☀</span>
+        <span class="theme-icon moon">☽</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">— Hello, I'm</p>
+      <h1 class="hero-name">Nilam<br><em>R.</em></h1>
+      <p class="hero-tagline">Designer &amp; Developer<br>based in Malaysia.</p>
+      <a href="#work" class="btn-primary">See My Work ↓</a>
+    </div>
+    <div class="hero-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>UI/UX Design</span><span class="dot">✦</span>
+        <span>Web Dev</span><span class="dot">✦</span>
+        <span>Database</span><span class="dot">✦</span>
+        <span>Figma</span><span class="dot">✦</span>
+        <span>GitHub</span><span class="dot">✦</span>
+        <span>Video Editing</span><span class="dot">✦</span>
+        <span>UI/UX Design</span><span class="dot">✦</span>
+        <span>Web Dev</span><span class="dot">✦</span>
+        <span>Database</span><span class="dot">✦</span>
+        <span>Figma</span><span class="dot">✦</span>
+        <span>GitHub</span><span class="dot">✦</span>
+        <span>Video Editing</span><span class="dot">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <span class="section-label">About Me</span>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>Crafting experiences<br>that <em>actually work.</em></h2>
+          <p>I'm a UI/UX Designer and Developer who obsesses over the details — from pixel-perfect interfaces to clean, scalable code. I bridge the gap between design and engineering, making sure what looks good also works great.</p>
+          <p>When I'm not designing or coding, I'm probably exploring new tools, playing with motion, or deep-diving into the latest design systems.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-num">UI/UX</span>
+            <span class="stat-label">Design</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">Dev</span>
+            <span class="stat-label">Web & Systems</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">DB</span>
+            <span class="stat-label">Database</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">VID</span>
+            <span class="stat-label">Video Editing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="section section-green" id="work">
+    <div class="container">
+      <span class="section-label light">Work</span>
+      <h2 class="section-title light">Things I've built,<br>designed &amp; created.</h2>
+      <div class="work-links">
+        <a href="https://figma.com" target="_blank" rel="noopener" class="work-card figma">
+          <div class="work-card-inner">
+            <div class="work-card-top">
+              <span class="work-tag">UI/UX Design</span>
+              <svg class="work-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+            <div class="work-card-bottom">
+              <p class="work-platform">Figma</p>
+              <p class="work-desc">View all UI/UX designs, wireframes, and prototypes.</p>
+            </div>
+          </div>
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener" class="work-card github">
+          <div class="work-card-inner">
+            <div class="work-card-top">
+              <span class="work-tag">Dev &amp; Systems</span>
+              <svg class="work-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+            <div class="work-card-bottom">
+              <p class="work-platform">GitHub</p>
+              <p class="work-desc">Browse websites, systems, and database projects.</p>
+            </div>
+          </div>
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener" class="work-card video">
+          <div class="work-card-inner">
+            <div class="work-card-top">
+              <span class="work-tag">Video Editing</span>
+              <svg class="work-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+            <div class="work-card-bottom">
+              <p class="work-platform">Videos</p>
+              <p class="work-desc">Watch video edits and motion projects on YouTube.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="container">
+      <span class="section-label">Skills</span>
+      <h2 class="section-title">Tools &amp; technologies<br>I work with.</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <p class="skill-group-title">Design</p>
+          <ul class="skill-list">
+            <li>Figma</li>
+            <li>UI/UX Design</li>
+            <li>Prototyping</li>
+            <li>Wireframing</li>
+            <li>Design Systems</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-title">Frontend</p>
+          <ul class="skill-list">
+            <li>HTML / CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Responsive Design</li>
+            <li>Tailwind CSS</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-title">Backend &amp; Database</p>
+          <ul class="skill-list">
+            <li>Node.js</li>
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li>PostgreSQL</li>
+            <li>REST APIs</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-title">Video & Tools</p>
+          <ul class="skill-list">
+            <li>CapCut</li>
+            <li>Video Editing</li>
+            <li>Git &amp; GitHub</li>
+            <li>VS Code</li>
+            <li>Notion</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-contact" id="contact">
+    <div class="container contact-container">
+      <span class="section-label">Contact</span>
+      <h2 class="contact-title">Let's work<br><em>together.</em></h2>
+      <p class="contact-sub">Have a project in mind? I'd love to hear about it. Drop me a message and let's make something great.</p>
+      <a href="mailto:hello@nilamrwork.com" class="btn-outline">hello@nilamrwork.com</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 nilamrwork — Made in Malaysia.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
