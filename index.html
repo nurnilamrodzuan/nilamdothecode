@@ -1,3 +1,67 @@
+
+/
+Claude finished the response
+
+index.html
+212 lines
+
+html
+
+
+script.js
+71 lines
+
+js
+
+
+style.css
+378 lines
+
+css
+
+tolong aku fix website ni. aku taknak yang dekat hero section benda yang bergerak tu.
+
+07:57
+
+Merancang penghapusan animasi bergerak dari hero section
+Merancang penghapusan animasi bergerak dari hero section
+Now let me clean up the leftover marquee styles in the CSS and the unused parallax reference in the JS.
+
+
+Edited 2 files, read a file
+Edited 2 files, read a file
+Dah siap! Benda yang bergerak kat hero section tu (marquee — tulisan "Frontend ✦ Backend ✦ PHP..." yang scroll merata) dah aku buang sepenuhnya.
+
+Aku buang dalam 3 tempat supaya bersih:
+
+index.html — buang blok <div class="hero-marquee"> keseluruhannya
+style.css — buang CSS marquee yang dah tak guna (.hero-marquee, .marquee-track, animation @keyframes marquee)
+script.js — buang parallax yang refer kat marquee tu
+Hero section sekarang akan center elok je sebab guna flexbox, jadi takde masalah layout. Yang lain semua aku tinggal macam asal — emoji melambai 👋, parallax pada teks hero, dan color switcher semua masih jalan.
+
+Kalau yang kau maksudkan "benda bergerak" tu sebenarnya tangan melambai 👋 (bukan marquee), bagitau je, senang nak buang tu juga.
+
+
+Index
+Code · HTML 
+
+Style
+Code · CSS 
+
+Script
+JS 
+
+Claude Fable 5 is currently unavailable.
+Learn more(opens in new tab)
+
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +75,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
+ 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <a href="#hero" class="nav-logo">nilamrwork</a>
@@ -31,7 +95,7 @@
       </button>
     </div>
   </nav>
-
+ 
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-content">
@@ -48,28 +112,8 @@
       </p>
       <a href="#work" class="btn-primary reveal-text" style="transition-delay:0.5s">See My Work ↓</a>
     </div>
-    <div class="hero-marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Frontend</span><span class="dot">✦</span>
-        <span>Backend</span><span class="dot">✦</span>
-        <span>PHP</span><span class="dot">✦</span>
-        <span>Database</span><span class="dot">✦</span>
-        <span>IoT</span><span class="dot">✦</span>
-        <span>Scratch</span><span class="dot">✦</span>
-        <span>Video Editing</span><span class="dot">✦</span>
-        <span>Figma</span><span class="dot">✦</span>
-        <span>Frontend</span><span class="dot">✦</span>
-        <span>Backend</span><span class="dot">✦</span>
-        <span>PHP</span><span class="dot">✦</span>
-        <span>Database</span><span class="dot">✦</span>
-        <span>IoT</span><span class="dot">✦</span>
-        <span>Scratch</span><span class="dot">✦</span>
-        <span>Video Editing</span><span class="dot">✦</span>
-        <span>Figma</span><span class="dot">✦</span>
-      </div>
-    </div>
   </section>
-
+ 
   <!-- ABOUT -->
   <section class="section" id="about">
     <div class="container">
@@ -101,7 +145,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- WORK -->
   <section class="section section-accent" id="work">
     <div class="container">
@@ -150,7 +194,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- SKILLS -->
   <section class="section" id="skills">
     <div class="container">
@@ -184,7 +228,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- CONTACT -->
   <section class="section section-contact" id="contact">
     <div class="container contact-container">
@@ -202,11 +246,11 @@
       </div>
     </div>
   </section>
-
+ 
   <footer class="footer">
     <p>© <span id="year"></span> nilamrwork — Made in Malaysia.</p>
   </footer>
-
+ 
   <script src="script.js"></script>
 </body>
 </html>

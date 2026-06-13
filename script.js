@@ -61,9 +61,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
   const heroContent = document.querySelector('.hero-content');
-  const marquee = document.querySelector('.hero-marquee');
   if (heroContent) heroContent.style.transform = `translateY(${scrollY * 0.22}px)`;
-  if (marquee) marquee.style.transform = `translateY(${scrollY * 0.08}px)`;
 });
 
 // ===== FOOTER YEAR =====

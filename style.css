@@ -183,23 +183,6 @@ em { font-style: italic; color: var(--accent2); }
 }
 .btn-primary:hover { transform: translateY(-3px); opacity: 0.9; }
 
-/* MARQUEE */
-.hero-marquee {
-  position: relative; z-index: 2; padding: 1.5rem 0;
-  overflow: hidden; border-top: 1px solid rgba(255,255,255,0.1);
-  margin-top: auto; width: 100%;
-}
-.marquee-track {
-  display: flex; gap: 2rem; align-items: center;
-  white-space: nowrap; animation: marquee 20s linear infinite; width: max-content;
-}
-.marquee-track span {
-  font-family: 'Satoshi', sans-serif; font-size: 0.78rem;
-  letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.28);
-}
-.marquee-track .dot { color: var(--accent2); font-size: 0.5rem; }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
 /* ===== SECTIONS ===== */
 .section { padding: 7rem 5%; }
 .section-accent { background: var(--hero-bg); transition: background 0.4s ease; }
