@@ -319,6 +319,16 @@ em { font-style: italic; color: var(--accent2); }
   transition: background 0.2s, color 0.2s, border-color 0.4s;
 }
 .btn-outline:hover { background: var(--accent); color: #fff; }
+.contact-btns {
+  display: flex; gap: 1rem; justify-content: center;
+  flex-wrap: wrap; align-items: center;
+}
+.btn-wa { display: inline-flex; align-items: center; gap: 0.55rem; }
+.btn-wa svg { width: 18px; height: 18px; }
+@media (max-width: 480px) {
+  .contact-btns { flex-direction: column; }
+  .contact-btns .btn-outline { width: 100%; text-align: center; justify-content: center; }
+}
 
 /* ===== FOOTER ===== */
 .footer {

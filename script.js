@@ -65,3 +65,7 @@ window.addEventListener('scroll', () => {
   if (heroContent) heroContent.style.transform = `translateY(${scrollY * 0.22}px)`;
   if (marquee) marquee.style.transform = `translateY(${scrollY * 0.08}px)`;
 });
+
+// ===== FOOTER YEAR =====
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
