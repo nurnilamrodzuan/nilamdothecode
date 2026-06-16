@@ -26,7 +26,7 @@
 
     <div class="nav-right">
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about"   class="nav-link" data-text="About Me">About Me</a></li>
+        <li><a href="#about"   class="nav-link" data-text="About Me">About</a></li>
         <li><a href="#work"    class="nav-link" data-text="Work">Work</a></li>
         <li><a href="#cases"   class="nav-link" data-text="Cases">Cases</a></li>
         <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
@@ -57,35 +57,27 @@
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <p class="hero-eyebrow reveal-text">developer · creator</p>
-
-      <h1 class="hero-greeting reveal-text" style="transition-delay: 0.1s">
-        i'm <span class="wave">👋</span>
-      </h1>
-
-      <div class="hero-name-wrap reveal-text" style="transition-delay: 0.2s">
-        <span class="hero-name-hand">Nilam R.</span>
-        <div class="hero-underline"></div>
+      <div class="layered-title" id="layered-title">
+        <h1 class="lt-main">NILAMDOTHECODE</h1>
+        <span aria-hidden="true" class="lt-copy lt-copy-1">NILAMDOTHECODE</span>
+        <span aria-hidden="true" class="lt-copy lt-copy-2">NILAMDOTHECODE</span>
+        <span aria-hidden="true" class="lt-copy lt-copy-3">NILAMDOTHECODE</span>
+        <span aria-hidden="true" class="lt-copy lt-copy-4">NILAMDOTHECODE</span>
       </div>
 
-      <p class="hero-tagline reveal-text" style="transition-delay: 0.35s">
-        i build clean, working code from scratch.
-      </p>
-
-      <a href="#work" class="btn-primary reveal-text" style="transition-delay: 0.5s">
-        Check It Out ↓
-      </a>
+      <a href="#work" class="btn-primary">See My Work ↓</a>
     </div>
   </section>
 
   <!-- ===== ABOUT ===== -->
   <section class="section section-statement" id="about">
     <div class="container">
-      <span class="section-label reveal">About</span>
+      <span class="section-label reveal reveal-line">About</span>
 
       <h2 class="statement reveal" style="transition-delay: 0.05s">
-        <span class="brand">nilamdothecode</span> is a one-man army specialized in
-        <em>web</em>, <em>systems</em> &amp; <em>IoT</em>. Based in Malaysia.
+        <span class="brand">nilamdothecode</span> Full-stack
+        <em>end-to-end</em>, from <em>database to deployment</em>. 
+        Based in Malaysia.
       </h2>
 
       <p class="statement-sub reveal" style="transition-delay: 0.2s">
@@ -97,9 +89,9 @@
   <!-- ===== WORK ===== -->
   <section class="section section-accent" id="work">
     <div class="container">
-      <span class="section-label light reveal">Work</span>
+      <span class="section-label light reveal reveal-line">Work</span>
 
-      <h2 class="section-heading light reveal" style="transition-delay: 0.1s">
+      <h2 class="section-heading light reveal-letters">
         Things I've built,<br>designed &amp; created.
       </h2>
 
@@ -107,7 +99,7 @@
 
         <!-- Figma -->
         <a href="https://figma.com" target="_blank" rel="noopener"
-           class="work-card reveal" style="transition-delay: 0.1s">
+           class="work-card reveal-left">
           <div class="work-icon">
             <svg viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M19 28.5C19 25.6 21.4 23.3 24.3 23.3C27.2 23.3 29.6 25.6 29.6 28.5C29.6 31.4 27.2 33.7 24.3 33.7C21.4 33.7 19 31.4 19 28.5Z" fill="currentColor"/>
@@ -124,7 +116,7 @@
 
         <!-- GitHub -->
         <a href="https://github.com" target="_blank" rel="noopener"
-           class="work-card reveal" style="transition-delay: 0.2s">
+           class="work-card reveal-right">
           <div class="work-icon">
             <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57
@@ -149,16 +141,16 @@
   <!-- ===== CASE STUDIES ===== -->
   <section class="section section-cases" id="cases">
     <div class="container">
-      <span class="section-label reveal">Case Studies</span>
+      <span class="section-label reveal reveal-line">Case Studies</span>
 
-      <h2 class="section-heading reveal" style="transition-delay: 0.1s">
+      <h2 class="section-heading reveal-letters">
         How i solve<br>real problems.
       </h2>
 
       <div class="case-grid">
 
         <!-- WarungGo -->
-        <a href="cases/warunggo.html" class="case-card reveal" style="transition-delay: 0.1s">
+        <a href="cases/warunggo.html" class="case-card reveal-scale">
           <div class="case-cover">
             <span class="case-cover-name">WarungGo</span>
           </div>
@@ -194,11 +186,11 @@
   <!-- ===== SKILLS / SERVICES ===== -->
   <section class="section section-services" id="skills">
     <div class="container">
-      <span class="section-label reveal">What I do</span>
+      <span class="section-label reveal reveal-line">What I do</span>
 
       <div class="services">
 
-        <div class="service reveal" style="transition-delay: 0.05s">
+        <div class="service reveal-left">
           <span class="service-eyebrow">Frontend &amp; backend</span>
           <h3 class="service-title">Web Development</h3>
           <p class="service-desc">
@@ -208,7 +200,7 @@
           <a href="#contact" class="service-link">Let's talk →</a>
         </div>
 
-        <div class="service reveal" style="transition-delay: 0.18s">
+        <div class="service reveal-right">
           <span class="service-eyebrow">Databases &amp; APIs</span>
           <h3 class="service-title">Systems</h3>
           <p class="service-desc">
@@ -218,7 +210,7 @@
           <a href="#contact" class="service-link">Let's talk →</a>
         </div>
 
-        <div class="service reveal" style="transition-delay: 0.31s">
+        <div class="service reveal-left">
           <span class="service-eyebrow">Hardware &amp; sensors</span>
           <h3 class="service-title">IoT</h3>
           <p class="service-desc">
@@ -228,7 +220,7 @@
           <a href="#contact" class="service-link">Let's talk →</a>
         </div>
 
-        <div class="service reveal" style="transition-delay: 0.44s">
+        <div class="service reveal-right">
           <span class="service-eyebrow">Design &amp; tools</span>
           <h3 class="service-title">Interfaces</h3>
           <p class="service-desc">
@@ -245,15 +237,11 @@
   <!-- ===== CONTACT ===== -->
   <section class="section section-contact" id="contact">
     <div class="container contact-container">
-      <span class="section-label reveal">Contact</span>
+      <span class="section-label reveal reveal-line">Contact</span>
 
       <h2 class="contact-title reveal" style="transition-delay: 0.1s">
         Let's work<br><em>together.</em>
       </h2>
-
-      <p class="contact-sub reveal" style="transition-delay: 0.2s">
-        Have a project in mind? I'd love to hear about it.
-      </p>
 
       <div class="contact-btns reveal" style="transition-delay: 0.3s">
 
@@ -294,7 +282,7 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <p>© <span id="year"></span> nilamdothecode — Made in Malaysia.</p>
+    <p>© <span id="year"></span> nilamdothecode - Malaysia.</p>
   </footer>
 
   <script src="script.js"></script>
