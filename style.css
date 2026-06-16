@@ -9,31 +9,31 @@
 /* ===== LIGHT / DARK THEMES ===== */
 :root,
 [data-theme="light"] {
-  --accent: #1B7A5A;
-  --accent2: #FFE034;
-  --accent-text: #ffffff;
+  --accent: #A8830F;
+  --accent2: #EECA13;
+  --accent-text: #583E11;
   --bg: #FAF8F3;
-  --bg2: #F0EDE4;
-  --text: #1a1a1a;
-  --text-muted: #6b7280;
+  --bg2: #F0EBE0;
+  --text: #583E11;
+  --text-muted: #8a7340;
   --card-bg: #ffffff;
-  --border: rgba(0, 0, 0, 0.08);
+  --border: rgba(88, 62, 17, 0.14);
   --nav-bg: rgba(250, 248, 243, 0.95);
-  --hero-bg: #1B7A5A;
+  --hero-bg: #583E11;
 }
 
 [data-theme="dark"] {
-  --accent: #34C285;
-  --accent2: #FFE034;
-  --accent-text: #ffffff;
-  --bg: #12150F;
-  --bg2: #1A1E16;
-  --text: #F0EDE4;
-  --text-muted: #9aa395;
-  --card-bg: #1A1E16;
-  --border: rgba(255, 255, 255, 0.1);
-  --nav-bg: rgba(18, 21, 15, 0.95);
-  --hero-bg: #23A56F;
+  --accent: #EECA13;
+  --accent2: #EECA13;
+  --accent-text: #583E11;
+  --bg: #221908;
+  --bg2: #2E2109;
+  --text: #FBF3DC;
+  --text-muted: #b3a378;
+  --card-bg: #33260E;
+  --border: rgba(238, 202, 19, 0.16);
+  --nav-bg: rgba(34, 25, 8, 0.95);
+  --hero-bg: #3A2B0F;
 }
 
 html {
@@ -50,7 +50,7 @@ body {
 
 em {
   font-style: italic;
-  color: var(--accent2);
+  color: var(--accent);
 }
 
 /* ===== NAVBAR ===== */
@@ -236,11 +236,10 @@ em {
 }
 
 .hero-eyebrow {
-  font-family: 'Satoshi', sans-serif;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-family: 'Kalam', cursive;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.02em;
   margin-bottom: 1.25rem;
 }
 
@@ -273,8 +272,8 @@ em {
 }
 
 .hero-name-hand {
-  font-family: 'Caveat', cursive;
-  font-size: clamp(4rem, 13vw, 9rem);
+  font-family: 'Kalam', cursive;
+  font-size: clamp(3.4rem, 11vw, 7.5rem);
   font-weight: 700;
   color: #fff;
   display: block;
@@ -291,10 +290,11 @@ em {
 }
 
 .hero-tagline {
-  font-size: clamp(0.95rem, 2vw, 1.15rem);
-  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Kalam', cursive;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  color: rgba(255, 255, 255, 0.65);
   font-weight: 400;
-  line-height: 1.8;
+  line-height: 1.6;
   margin-bottom: 2.5rem;
 }
 
@@ -339,18 +339,17 @@ em {
 }
 
 .section-label {
-  font-family: 'Satoshi', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--text-muted);
+  font-family: 'Kalam', cursive;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  color: var(--accent);
   display: block;
   margin-bottom: 1.25rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .section-label.light {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .section-heading {
@@ -368,8 +367,12 @@ em {
 }
 
 .section-heading em {
-  color: var(--accent2);
+  color: var(--accent);
   font-style: italic;
+}
+
+.section-heading.light em {
+  color: var(--accent2);
 }
 
 /* ===== ABOUT ===== */
@@ -539,7 +542,7 @@ em {
 }
 
 .statement em {
-  color: var(--accent2);
+  color: var(--accent);
   font-style: normal;
 }
 
@@ -575,11 +578,10 @@ em {
 }
 
 .service-eyebrow {
-  font-family: 'Satoshi', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  color: var(--text-muted);
+  font-family: 'Kalam', cursive;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  color: var(--accent);
   margin-bottom: 0.7rem;
 }
 
@@ -889,10 +891,9 @@ em {
 
 .case-meta {
   display: block;
-  font-family: 'Satoshi', sans-serif;
-  font-size: 0.66rem;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  font-family: 'Kalam', cursive;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
   color: var(--text-muted);
   margin-bottom: 0.6rem;
 }
@@ -920,11 +921,10 @@ em {
 }
 
 .case-link {
-  font-family: 'Satoshi', sans-serif;
-  font-size: 0.72rem;
+  font-family: 'Kalam', cursive;
+  font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   color: var(--accent);
 }
 
