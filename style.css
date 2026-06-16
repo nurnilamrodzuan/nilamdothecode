@@ -814,6 +814,140 @@ em {
   transition: background 0.4s ease;
 }
 
+/* ===== CASE STUDIES ===== */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.case-card {
+  display: block;
+  text-decoration: none;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.case-cover {
+  aspect-ratio: 16 / 10;
+  background: var(--hero-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s ease;
+}
+
+.case-cover::before {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: var(--accent2);
+  opacity: 0.18;
+}
+
+.case-cover-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: #fff;
+  letter-spacing: 0.04em;
+  position: relative;
+  z-index: 1;
+}
+
+.case-cover-soon {
+  background: var(--bg2);
+  border-bottom: 1px dashed var(--border);
+}
+
+.case-cover-soon::before {
+  display: none;
+}
+
+.case-cover-soon-text {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.case-body {
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+
+.case-meta {
+  display: block;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.case-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin-bottom: 0.6rem;
+  transition: color 0.3s ease;
+}
+
+.case-card:hover .case-name {
+  color: var(--accent);
+}
+
+.case-desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.case-link {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.case-card-soon {
+  opacity: 0.6;
+}
+
+.case-card-soon:hover {
+  transform: none;
+  border-color: var(--border);
+}
+
+.case-card-soon .case-body {
+  opacity: 0.9;
+}
+
+@media (max-width: 720px) {
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== REVEAL ANIMATIONS ===== */
 .reveal,
 .reveal-text {

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WarungGo — Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     DESIGN TOKENS
+     ============================================================ */
+  :root{
+    --ink:#15171C;
+    --ink-soft:#454B57;
+    --paper:#F6F7F4;
+    --surface:#FFFFFF;
+    --line:#E4E6E1;
+    --teal:#0E5F4E;
+    --teal-bright:#14A883;
+    --amber:#E8920C;
+    --maxw:980px;
+    --display:"Space Grotesk",sans-serif;
+    --body:"Inter",sans-serif;
+    --mono:"JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ============================================================
+     HERO  — projek name, tagline, meta, buttons, tech badges
+     ============================================================ */
+  .hero{
+    background:var(--ink);
+    color:#fff;
+    padding:88px 0 72px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-120px;
+    width:420px;height:420px;border-radius:50%;
+    background:radial-gradient(circle at center,rgba(20,168,131,.22),transparent 70%);
+    pointer-events:none;
+  }
+  .eyebrow{
+    font-family:var(--mono);font-size:13px;letter-spacing:.08em;
+    color:var(--teal-bright);text-transform:uppercase;margin-bottom:20px;
+  }
+  .hero h1{
+    font-family:var(--display);font-weight:700;
+    font-size:clamp(40px,7vw,68px);line-height:1.02;letter-spacing:-.02em;
+    margin-bottom:18px;
+  }
+  .hero .tagline{
+    font-size:clamp(17px,2.4vw,21px);color:#C9CDD4;max-width:560px;
+  }
+  /* meta row: role / year / platform */
+  .meta{
+    display:flex;flex-wrap:wrap;gap:32px;margin-top:38px;
+  }
+  .meta .item .k{
+    font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+    text-transform:uppercase;color:#7C828E;margin-bottom:4px;
+  }
+  .meta .item .v{font-weight:500;font-size:15px;color:#EDEEF0}
+  /* buttons */
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+  .btn{
+    font-family:var(--body);font-weight:600;font-size:15px;
+    padding:13px 24px;border-radius:10px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:9px;
+    transition:transform .15s ease,background .15s ease,border-color .15s ease;
+  }
+  .btn svg{width:17px;height:17px}
+  .btn-primary{background:var(--teal-bright);color:#06231C}
+  .btn-primary:hover{background:#1ec197;transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:#fff;border:1px solid #3A404C}
+  .btn-ghost:hover{border-color:var(--teal-bright);transform:translateY(-2px)}
+  .btn:focus-visible{outline:2px solid var(--teal-bright);outline-offset:3px}
+  /* tech badges */
+  .badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:44px}
+  .badge{
+    font-family:var(--mono);font-size:12.5px;
+    padding:7px 13px;border-radius:7px;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+    color:#D6D9DE;display:inline-flex;align-items:center;gap:7px;
+  }
+  .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+
+  /* ============================================================
+     SECTIONS
+     ============================================================ */
+  section{padding:72px 0}
+  .sec-label{
+    font-family:var(--mono);font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--teal);
+    display:flex;align-items:center;gap:12px;margin-bottom:22px;
+  }
+  .sec-label .num{
+    color:var(--amber);font-weight:500;
+  }
+  h2{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(26px,4vw,38px);line-height:1.12;letter-spacing:-.015em;
+    margin-bottom:20px;max-width:680px;
+  }
+  p.lead{font-size:17.5px;color:var(--ink-soft);max-width:640px}
+  p.lead + p.lead{margin-top:18px}
+
+  /* image / screenshot placeholders */
+  .shot{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    aspect-ratio:16/9;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:10px;
+    color:#A7ABA4;margin-top:36px;
+    background-image:repeating-linear-gradient(45deg,#FBFBF9 0 12px,#F4F5F2 12px 24px);
+  }
+  .shot svg{width:34px;height:34px;opacity:.55}
+  .shot span{font-family:var(--mono);font-size:13px}
+  .shot-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+  .shot-grid .shot{margin-top:0;aspect-ratio:3/4}
+
+  /* alternating tinted section */
+  .tint{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+  /* problem / solution two-up */
+  .twoup{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:8px}
+  .twoup .col h3{
+    font-family:var(--display);font-size:19px;font-weight:600;margin-bottom:12px;
+  }
+  .twoup .col .tag{
+    font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    padding:4px 10px;border-radius:20px;display:inline-block;margin-bottom:14px;
+  }
+  .tag.bad{background:#FBE9E7;color:#C0392B}
+  .tag.good{background:#E3F4EE;color:var(--teal)}
+  .twoup ul{list-style:none}
+  .twoup li{
+    padding-left:24px;position:relative;margin-bottom:11px;color:var(--ink-soft);font-size:15.5px;
+  }
+  .twoup li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:2px}
+  .col.problem li::before{background:#E0816F}
+  .col.solution li::before{background:var(--teal-bright)}
+
+  /* process steps — a real sequence, so numbered */
+  .steps{margin-top:20px}
+  .step{
+    display:grid;grid-template-columns:auto 1fr;gap:24px;
+    padding:26px 0;border-top:1px solid var(--line);
+  }
+  .step:last-child{border-bottom:1px solid var(--line)}
+  .step .n{
+    font-family:var(--display);font-size:26px;font-weight:700;color:var(--amber);line-height:1;
+  }
+  .step h3{font-family:var(--display);font-size:18px;font-weight:600;margin-bottom:6px}
+  .step p{color:var(--ink-soft);font-size:15.5px;max-width:600px}
+
+  /* results metrics */
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
+  .metric{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px 22px;
+  }
+  .metric .big{
+    font-family:var(--display);font-weight:700;font-size:clamp(32px,5vw,46px);
+    color:var(--teal);line-height:1;letter-spacing:-.02em;
+  }
+  .metric .lbl{margin-top:10px;font-size:14px;color:var(--ink-soft)}
+
+  /* reflection */
+  .reflect{
+    background:var(--ink);color:#fff;border-radius:18px;padding:48px;margin-top:8px;
+  }
+  .reflect .sec-label{color:var(--teal-bright)}
+  .reflect h2{color:#fff}
+  .reflect p{color:#C9CDD4;font-size:17px;max-width:640px}
+
+  /* footer */
+  footer{padding:56px 0;text-align:center;color:var(--ink-soft)}
+  footer .fcta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+  footer .ftext{font-family:var(--mono);font-size:13px}
+  footer a.inline{color:var(--teal);text-decoration:none;border-bottom:1px solid var(--teal)}
+
+  /* responsive */
+  @media(max-width:720px){
+    .twoup,.metrics,.shot-grid{grid-template-columns:1fr}
+    .metrics{gap:14px}
+    .reflect{padding:32px 24px}
+    section{padding:56px 0}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HERO
+     Replace: project name, tagline, meta values,
+     button links (href="#"), and tech badges.
+     ============================================================ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Case Study · Mobile &amp; Web</div>
+    <h1>WarungGo</h1>
+    <p class="tagline">An ordering app and live kitchen dashboard that replaced phone-call chaos for neighbourhood restaurants.</p>
+
+    <div class="meta">
+      <div class="item"><div class="k">Role</div><div class="v">Full-stack &amp; Mobile Dev</div></div>
+      <div class="item"><div class="k">Timeline</div><div class="v">2024 · 3 months</div></div>
+      <div class="item"><div class="k">Platform</div><div class="v">iOS · Android · Web</div></div>
+      <div class="item"><div class="k">Team</div><div class="v">Solo</div></div>
+    </div>
+
+    <!-- LIVE DEMO + VIEW CODE buttons -->
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        Live Demo
+      </a>
+      <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/></svg>
+        View Code
+      </a>
+    </div>
+
+    <!-- TECH STACK BADGES -->
+    <div class="badges">
+      <span class="badge"><span class="dot" style="background:#54C5F8"></span>Flutter</span>
+      <span class="badge"><span class="dot" style="background:#83CD29"></span>Node.js</span>
+      <span class="badge"><span class="dot" style="background:#336791"></span>PostgreSQL</span>
+      <span class="badge"><span class="dot" style="background:#FFCA28"></span>Firebase</span>
+      <span class="badge"><span class="dot" style="background:#635BFF"></span>Stripe</span>
+      <span class="badge"><span class="dot" style="background:#46E3B7"></span>WebSocket</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     01 — OVERVIEW
+     ============================================================ -->
+<section>
+  <div class="wrap">
+    <div class="sec-label"><span class="num">01</span> Overview</div>
+    <h2>What WarungGo is, in one breath</h2>
+    <p class="lead">WarungGo is a two-part product: a customer mobile app for browsing a menu and placing orders, and a real-time web dashboard the kitchen uses to receive, track, and complete those orders without ever picking up the phone.</p>
+    <p class="lead">It was built for a single family-run restaurant first, then shaped into something three more outlets now use daily.</p>
+
+    <!-- Replace this placeholder with a hero shot / cover image -->
+    <div class="shot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l4-4 4 4 5-5 2 2"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+      <span>Cover image / hero mockup</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     02 — PROBLEM & SOLUTION (the heart of any case study)
+     ============================================================ -->
+<section class="tint">
+  <div class="wrap">
+    <div class="sec-label"><span class="num">02</span> The challenge</div>
+    <h2>Orders were getting lost between the phone and the kitchen</h2>
+    <p class="lead">During peak hours, staff juggled WhatsApp messages, phone calls, and walk-ins on scraps of paper. Orders were missed, repeated, or rung up wrong — and there was no record of anything afterwards.</p>
+
+    <div class="twoup">
+      <div class="col problem">
+        <span class="tag bad">Before</span>
+        <h3>The pain points</h3>
+        <ul>
+          <li>Orders taken over 3 different channels, none of them logged</li>
+          <li>Kitchen overwhelmed and frequently lost track during rush hour</li>
+          <li>No daily sales record, so stock planning was guesswork</li>
+          <li>Customers calling repeatedly to check order status</li>
+        </ul>
+      </div>
+      <div class="col solution">
+        <span class="tag good">After</span>
+        <h3>What I built to fix it</h3>
+        <ul>
+          <li>One mobile app where customers order and pay in two taps</li>
+          <li>A live kitchen dashboard that updates the second an order lands</li>
+          <li>Every order stored, with an auto-generated daily sales summary</li>
+          <li>Push notifications keep customers updated — no more calls</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     03 — PROCESS (a real sequence → numbering earns its place)
+     ============================================================ -->
+<section>
+  <div class="wrap">
+    <div class="sec-label"><span class="num">03</span> Process</div>
+    <h2>How it came together</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div><h3>Sat in the restaurant for two days</h3><p>Watched a real lunch rush to map exactly where orders broke down before writing a single line of code.</p></div></div>
+      <div class="step"><div class="n">2</div><div><h3>Wireframed the two flows separately</h3><p>The customer's job (order fast) and the kitchen's job (never miss one) are different, so I designed them as two distinct experiences sharing one backend.</p></div></div>
+      <div class="step"><div class="n">3</div><div><h3>Built the real-time core first</h3><p>WebSockets push new orders to the kitchen instantly. I proved this worked end-to-end before building anything pretty around it.</p></div></div>
+      <div class="step"><div class="n">4</div><div><h3>Tested live with one outlet</h3><p>Ran it through real service for two weeks, fixed what broke, and only then rolled it out to other restaurants.</p></div></div>
+    </div>
+
+    <!-- Replace with real app screenshots -->
+    <div class="shot-grid">
+      <div class="shot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg><span>App screen — menu</span></div>
+      <div class="shot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg><span>App screen — checkout</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     04 — RESULTS (numbers make a case study credible)
+     ============================================================ -->
+<section class="tint">
+  <div class="wrap">
+    <div class="sec-label"><span class="num">04</span> Results</div>
+    <h2>The numbers after the first month</h2>
+    <p class="lead">Real impact, measured against how the restaurant ran before. These are the figures that matter to anyone reading this.</p>
+    <div class="metrics">
+      <div class="metric"><div class="big" data-count="60" data-suffix="%">0%</div><div class="lbl">Fewer order errors</div></div>
+      <div class="metric"><div class="big" data-count="3" data-suffix=" min">0 min</div><div class="lbl">Avg order time (was 8)</div></div>
+      <div class="metric"><div class="big" data-count="1200" data-suffix="+">0</div><div class="lbl">Orders in month one</div></div>
+      <div class="metric"><div class="big" data-count="4.7" data-suffix="★" data-decimal="1">0★</div><div class="lbl">Average app rating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     05 — REFLECTION
+     ============================================================ -->
+<section>
+  <div class="wrap">
+    <div class="reflect">
+      <div class="sec-label"><span class="num">05</span> What I learned</div>
+      <h2>The hardest part wasn't the code</h2>
+      <p>Watching the kitchen during a real rush taught me more than any spec ever could. The first design I sketched looked clean but would have slowed the staff down — the dashboard needed fewer taps and bigger touch targets than I assumed. If I rebuilt it today, I'd start by observing the people who use it, every single time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="wrap">
+    <div class="fcta">
+      <a class="btn btn-primary" href="#" target="_blank" rel="noopener" style="background:var(--teal);color:#fff">Live Demo</a>
+      <a class="btn btn-ghost" href="#" target="_blank" rel="noopener" style="color:var(--ink);border-color:var(--line)">View Code on GitHub</a>
+    </div>
+    <p class="ftext">Next project → <a class="inline" href="#">back to portfolio</a></p>
+  </div>
+</footer>
+
+<script>
+  // Animated count-up for the result metrics, runs once on scroll into view.
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const nums = document.querySelectorAll('.big[data-count]');
+
+  function animate(el){
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const dec = parseInt(el.dataset.decimal || '0');
+    if(reduce){ el.textContent = target.toFixed(dec) + suffix; return; }
+    const dur = 1200, start = performance.now();
+    function tick(now){
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = (target * eased).toFixed(dec) + suffix;
+      if(p < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toFixed(dec) + suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ animate(e.target); io.unobserve(e.target); }
+    });
+  }, {threshold:0.6});
+  nums.forEach(n=>io.observe(n));
+</script>
+</body>
+</html>
